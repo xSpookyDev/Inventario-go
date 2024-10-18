@@ -10,6 +10,7 @@ import (
 //repository is the interface that wraps the Basic CRUD operations
 
 //go:generate mockery --name=Repository -output=repository --inpackage
+
 type Repository interface {
 	SaveUser(ctx context.Context, email, name, password string) error
 	GetUserByEmail(ctx context.Context, email string) (*entity.User, error)
