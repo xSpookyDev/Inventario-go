@@ -1,0 +1,7 @@
+port: 9090
+database:
+  host: localhost
+  port: 9093
+  user: root
+  password: djdream3
+  name: inventory
