@@ -8,7 +8,6 @@ import (
 	"inventario-go/settings"
 	"os"
 
-	"github.com/jmoiron/sqlx"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"go.uber.org/fx"
@@ -27,14 +26,7 @@ func main() {
 			repository.New,
 			service.New,
 		),
-		fx.Invoke(
-			func(db *sqlx.DB) {
-				_, err := db.Query("select * from USERS;")
-				if err != nil {
-					panic(err)
-				}
-			},
-		),
+		fx.Invoke(),
 	)
 	app.Run()
 
