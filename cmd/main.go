@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"inventario-go/database"
+	"inventario-go/internal/repository"
+	"inventario-go/internal/service"
 	"inventario-go/settings"
 	"os"
 
@@ -22,6 +24,8 @@ func main() {
 			context.Background,
 			settings.New,
 			database.New,
+			repository.New,
+			service.New,
 		),
 		fx.Invoke(
 			func(db *sqlx.DB) {
