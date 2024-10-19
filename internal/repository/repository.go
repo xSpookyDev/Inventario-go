@@ -14,6 +14,10 @@ import (
 type Repository interface {
 	SaveUser(ctx context.Context, email, name, password string) error
 	GetUserByEmail(ctx context.Context, email string) (*entity.User, error)
+	SaveUserRole(ctx context.Context, userID, roleID int) error
+	RemoveUserRole(ctx context.Context, userID, roleID int) error
+	GetUserRoles(ctx context.Context, userID int) ([]entity.UserRole, error)
+
 }
 
 type repo struct {
