@@ -24,7 +24,7 @@ func (s *serv) GetProducts(ctx context.Context) ([]models.Product, error) {
 			ID:          p.ID,
 			Name:        p.Name,
 			Description: p.Description,
-			Price:       float32(p.Price),
+			Price:       p.Price,
 		})
 
 	}

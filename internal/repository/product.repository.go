@@ -16,7 +16,7 @@ const (
 	queryGetProductByID = `select id, name, description, price, created_by from PRODUCTS where id = ?;`
 )
 
-func (r *repo) SaveProduct(ctx context.Context, name, description string, price float32, createdBy int) error {
+func (r *repo) SaveProduct(ctx context.Context, name, description string, price int, createdBy int) error {
 
 	_, err := r.db.ExecContext(ctx, queryInsertProduct, name, description, price, createdBy)
 	return err
