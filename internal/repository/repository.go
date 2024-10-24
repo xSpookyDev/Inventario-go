@@ -18,6 +18,9 @@ type Repository interface {
 	RemoveUserRole(ctx context.Context, userID, roleID int) error
 	GetUserRoles(ctx context.Context, userID int) ([]entity.UserRole, error)
 
+	SaveProduct(ctx context.Context, name, description string, price float32, createdBy int) error
+	GetProducts(ctx context.Context) ([]entity.Product, error)
+	GetProduct(ctx context.Context, id int) (*entity.Product, error)
 }
 
 type repo struct {

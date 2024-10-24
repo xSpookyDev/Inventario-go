@@ -14,9 +14,9 @@ type Service interface {
 	LoginUser(ctx context.Context, email, password string) (*models.User, error)
 	AddUserRole(ctx context.Context, userID, roleID int) error
 	RemoveUserRole(ctx context.Context, userID, roleID int) error
-	//GetProducts(ctx context.Context) ([]models.Product, error)
-	//GetProduct(ctx context.Context, id int64) (*models.Product, error)
-	//AddProdcut(ctx context.Context, product models.Product, userEmail string) error
+	GetProducts(ctx context.Context) ([]models.Product, error)
+	GetProduct(ctx context.Context, id int) (*models.Product, error)
+	AddProduct(ctx context.Context, product models.Product, userEmail string) error
 }
 
 type serv struct {
